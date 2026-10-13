@@ -10,9 +10,9 @@ class Settings(BaseSettings):
     app_env:str="development"
     openai_api_key:str=""
     tavily_api_key:str=""
-    picecone_api_key:str=""
+    pinecone_api_key:str=""
     pinecone_index_name:str="fde-it-support-rag"
-    picecone_namespace:str="company-it-kb"
+    pinecone_namespace:str="company-it-kb"
     embedding_model:str="text-embedding-3-small"
     openai_model:str="gpt-4o-mini"
     top_k:int=4
