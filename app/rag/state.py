@@ -1,0 +1,32 @@
+from typing import List,Literal
+from typing_extensions import TypedDict
+from pydantic import BaseModel,Field
+from langchain_core.documents import Document
+
+
+
+class RouteDescision(BaseModel):
+    route:Literal["kb","direct"]=Field(
+        description="Use kb for questions needing Agentic RAG docs, direct for greeting/simple chat"
+    )
+    
+class EvedenceGrade(BaseModel):
+    grade:Literal["good","weak"]=Field(
+        description="good means evdience can answer the question; weak means not enough evidence."
+    )
+    
+    
+class AgentState(TypedDict):
+    question:str
+    current_query:str
+    kb_docs:List[Document]
+    web_results:str
+    kb_grade:str
+    web_grade:str
+    answer:str
+    source_used:str
+    retry_count:int
+    trace:List[str]
+    citations:List[dict]
+    
+    
