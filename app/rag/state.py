@@ -5,12 +5,12 @@ from langchain_core.documents import Document
 
 
 
-class RouteDescision(BaseModel):
+class RouteDecision(BaseModel):
     route:Literal["kb","direct"]=Field(
         description="Use kb for questions needing Agentic RAG docs, direct for greeting/simple chat"
     )
     
-class EvedenceGrade(BaseModel):
+class EvidenceGrade(BaseModel):
     grade:Literal["good","weak"]=Field(
         description="good means evdience can answer the question; weak means not enough evidence."
     )
